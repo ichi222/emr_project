@@ -1,0 +1,10 @@
+<h1>Medical Images for {{ patient.first_name }} {{ patient.last_name }}</h1>
+<a href="{% url 'medical_image_upload' patient.id %}">Upload New Image</a>
+<ul>
+    {% for image in images %}
+        <li>
+            <img src="{{ image.image.url }}" style="max-width: 300px;">
+            <p>{{ image.description }}</p>
+        </li>
+    {% endfor %}
+</ul>
